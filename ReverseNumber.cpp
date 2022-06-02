@@ -13,20 +13,14 @@ using namespace std;
 
 int main()
 {
-    int n;
-    bool flag=0;
+    int n , revrs=0;
     cin>>n;
-    for(int i=2 ; i<sqrt(n) ; i++ )
+    
+    while(n)
     {
-        if(n%i==0)
-        {
-            cout<<n<<" is not a prime number"<<endl;
-            flag=1;
-            break;
-        }
+        revrs = revrs*10 + n%10;
+        n=n/10;
     }
-    if(flag==0)
-    cout<<n<<" is a prime number"<<endl;
-
+    cout<<revrs;
     return 0;
 }

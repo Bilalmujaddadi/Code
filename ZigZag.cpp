@@ -7,26 +7,28 @@ Write your code in this editor and press "Run" button to compile and execute it.
 *******************************************************************************/
 
 #include <iostream>
-#include<cmath>
 
 using namespace std;
 
 int main()
 {
     int n;
-    bool flag=0;
     cin>>n;
-    for(int i=2 ; i<sqrt(n) ; i++ )
+    for(int i=1 ; i<=3 ; i++)
     {
-        if(n%i==0)
+        for(int j=1 ; j<=n ; j++)
         {
-            cout<<n<<" is not a prime number"<<endl;
-            flag=1;
-            break;
+            if(((i+j)%4==0) || (i==2 && j%4==0))
+            {
+                cout<<"* ";
+            }
+            else
+            {
+                cout<<"  ";
+            }
         }
+        cout<<endl;
     }
-    if(flag==0)
-    cout<<n<<" is a prime number"<<endl;
 
     return 0;
 }

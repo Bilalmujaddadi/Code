@@ -6,27 +6,35 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
 
+
+
+
+/* amstrong is the number where if we cube the every number of the given number and sum it then it will give the original number   */
 #include <iostream>
-#include<cmath>
+#include<math.h>
 
 using namespace std;
 
 int main()
 {
-    int n;
-    bool flag=0;
+    int n ,lastdigit , j=0 ,sum ,nmbr;
     cin>>n;
-    for(int i=2 ; i<sqrt(n) ; i++ )
+    
+    nmbr=n;
+    while(nmbr)
     {
-        if(n%i==0)
-        {
-            cout<<n<<" is not a prime number"<<endl;
-            flag=1;
-            break;
-        }
+        lastdigit = nmbr%10;
+        j+=pow(lastdigit,3);
+        nmbr=nmbr/10;
     }
-    if(flag==0)
-    cout<<n<<" is a prime number"<<endl;
-
+    if(j==n)
+    {
+        cout<<"number is amstrong";
+    }
+    else
+    {
+        cout<<"number is not amstrong";
+    }
+    
     return 0;
 }
